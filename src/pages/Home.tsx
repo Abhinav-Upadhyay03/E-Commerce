@@ -1,18 +1,12 @@
 import Navbar from "../component/Navbar";
 import ProductCard from "../component/ProductCard";
+import Product from "./Product";
 const Home = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="grid sm:grid-cols-3 grid-cols-2">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </div>
+  <Product/>
+      
     </div>
   );
 };
