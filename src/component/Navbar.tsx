@@ -1,8 +1,14 @@
 import React from "react";
-
+import Cart from "../pages/Cart";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const handleCartClick = () => {
-    console.log("fks");
+    navigate("/cart");
+  };
+  const handleLogoClick = () => {
+    navigate("/")
   };
   return (
     <div className="nav flex place-content-between h-28 w-100 ">
@@ -11,6 +17,7 @@ const Navbar = () => {
           src="/images/logo2.png"
           alt=""
           className="sm:rounded-full sm:w-52 sm:h-52  h-28"
+          onClick={handleLogoClick}
         />
       </div>
       <div className="middle flex place-content-evenly items-center sm:w-1/2 w-5/12 ">
@@ -29,11 +36,11 @@ const Navbar = () => {
         <a href="">
           <i className="ri-heart-line w-1/3 sm:text-3xl text-xl font-thin"></i>
         </a>
-        
+
         <a href="">
           <i
             className="ri-shopping-cart-line sm:text-3xl text-xl font-thin"
-            onClick={handleCartClick()}
+            onClick={handleCartClick}
           ></i>
         </a>
       </div>
