@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const ProductInfo = () => {
+    const navigate = useNavigate();
+
+    const handleCartClick = () => {
+      navigate("/cart");
+    };
   return (
     <>
       <div className="productpage flex p-8  h-scren">
@@ -18,7 +23,9 @@ const ProductInfo = () => {
               non? Molestiae optio eius voluptas architecto repudiandae sed
               iusto deserunt! Doloribus mollitia praesentium vero sunt?
             </p>
-            
+            <button className="bg-green-100 p-3 w-6/12 mt-4 text-sm rounded-3xl" onClick={handleCartClick}>
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
