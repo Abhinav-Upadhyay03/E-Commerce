@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 const ProductCard = ({ id, name, price }) => {
-  const [product, setProduct] = useState({id:0, name: "", price: "", quantity: 0 });
-  const [counter, setCounter] = useState(0); // Initialize counter state with 0
+  const [product, setProduct] = useState({
+    id: 0,
+    name: "",
+    price: "",
+    quantity: 0,
+  });
+  const [counter, setCounter] = useState(0);
 
   const handleClick = () => {
     const updatedProduct = {
       id: id,
       name: name,
       price: price,
-      quantity: counter + 1, // Increment counter when setting product quantity
+      quantity: counter + 1,
     };
     setCounter(counter + 1);
     setProduct(updatedProduct);
@@ -19,16 +24,24 @@ const ProductCard = ({ id, name, price }) => {
   const setLocalSto = (product) => {
     // Retrieve existing products from local storage
     const existingProductsString = localStorage.getItem("products");
-    const existingProducts = existingProductsString
+    let existingProducts = existingProductsString
       ? JSON.parse(existingProductsString)
       : [];
-    // Add the new product to the existing products array
-    const updatedProducts = [...existingProducts, product];
-    // Store the updated products array in local storage
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
+
+    const existingProductIndex = existingProducts.findIndex(
+      (existingProduct) => existingProduct.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      existingProducts[existingProductIndex].quantity += 1;
+    } else {
+      existingProducts = [...existingProducts, product];
+    }
+
+    localStorage.setItem("products", JSON.stringify(existingProducts));
   };
+
   useEffect(() => {
-    // Run this effect when the component mounts to log the products stored in local storage
     const storedProductsString = localStorage.getItem("products");
     const storedProducts = storedProductsString
       ? JSON.parse(storedProductsString)
