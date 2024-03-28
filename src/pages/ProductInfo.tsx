@@ -11,12 +11,12 @@ const ProductInfo = () => {
     <>
       <div className="productpage flex p-8 h-scren">
         <div className="left w-6/12">
-          <div className="img w-full">
-            <img src="/images/logo.jpg" alt="" />
+          <div className="img w-full flex justify-center items-center">
+            <img className="h-96" src="/images/fruits.jpg" alt="" />
           </div>
         </div>
         <div className="right w-6/12 p-8">
-          <div className="title text-4xl mt-8">Title of product</div>
+          <div className="title text-4xl mt-8">Lorem, ipsum.</div>
           <div className="price mt-4 text-2xl">$401</div>
           <div className="desc mt-4">
             <p>

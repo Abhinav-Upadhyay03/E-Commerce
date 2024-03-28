@@ -23,8 +23,8 @@ const ProductCard = ({ id, name, price }) => {
   };
 
   const handleInfoClick = () => {
-      navigate("/productinfo");
-  }
+    navigate("/productinfo");
+  };
 
   const setLocalSto = (product) => {
     // Retrieve existing products from local storage
@@ -60,6 +60,11 @@ const ProductCard = ({ id, name, price }) => {
         onClick={handleInfoClick}
       >
         <div className="imgDiv w-full h-full ">
+          <img
+            className="w-full h-full"
+            src="https://picsum.photos/200/300"
+            alt=""
+          />
         </div>
       </div>
       <div className="lowerDiv sm:w-11/12 w-11/12 m-auto">
