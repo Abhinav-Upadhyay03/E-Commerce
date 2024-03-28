@@ -62,7 +62,7 @@ const ProductCard = ({ id, name, price }) => {
         <div className="imgDiv w-full h-full ">
           <img
             className="w-full h-full"
-            src="https://picsum.photos/200/300"
+            src="/images/wm.jpg"
             alt=""
           />
         </div>
