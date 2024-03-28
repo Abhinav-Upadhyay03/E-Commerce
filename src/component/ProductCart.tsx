@@ -5,7 +5,7 @@ const ProductCart = ({ name, price, quantity }) => {
     <>
       <div className="parent flex content-center items-center m-12 p-2 bg-gray-50 rounded-3xl gap-10 shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
         <div className="left w-1/4">
-          <img className="rounded-2xl" src="/images/logo.jpg" alt="" />
+          <img className="rounded-2xl" src="/images/cartmain.jpg" alt="" />
         </div>
         <div className="right leading-loose">
           <h1 className="text-3xl">{name}</h1>

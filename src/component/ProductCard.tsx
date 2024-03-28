@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ id, name, price }) => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({
     id: 0,
     name: "",
@@ -20,6 +21,10 @@ const ProductCard = ({ id, name, price }) => {
     setProduct(updatedProduct);
     setLocalSto(updatedProduct);
   };
+
+  const handleInfoClick = () => {
+      navigate("/productinfo");
+  }
 
   const setLocalSto = (product) => {
     // Retrieve existing products from local storage
@@ -50,8 +55,12 @@ const ProductCard = ({ id, name, price }) => {
 
   return (
     <div className="container sm:w-80 sm:h-auto w-40 h-auto bg-green-100 m-auto sm:mb-10 mb-4 sm:pt-2 pt-1 sm:pb-6 pb-2 rounded-xl cursor-default shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
-      <div className="upperDiv  sm:w-11/12 sm:h-64 w-11/12 h-32 bg-blue-100 m-auto sm:my-2 rounded-xl">
-        <div className="imgDiv w-full h-full "></div>
+      <div
+        className="upperDiv  sm:w-11/12 sm:h-64 w-11/12 h-32 bg-blue-100 m-auto sm:my-2 rounded-xl"
+        onClick={handleInfoClick}
+      >
+        <div className="imgDiv w-full h-full ">
+        </div>
       </div>
       <div className="lowerDiv sm:w-11/12 w-11/12 m-auto">
         <div className="title">
