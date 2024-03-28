@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const ProductCard = ({ name, price }) => {
-  const [product, setProduct] = useState({ name: "", price: "", quantity: 0 });
+const ProductCard = ({ id, name, price }) => {
+  const [product, setProduct] = useState({id:0, name: "", price: "", quantity: 0 });
   const [counter, setCounter] = useState(0); // Initialize counter state with 0
 
   const handleClick = () => {
     const updatedProduct = {
+      id: id,
       name: name,
       price: price,
       quantity: counter + 1, // Increment counter when setting product quantity

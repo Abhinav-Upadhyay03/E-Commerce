@@ -17,7 +17,7 @@ const Product = () => {
     <div>
       <div className="grid lg:grid-cols-3 grid-cols-2">
         {products.map((product, index) => (
-            <ProductCard key={index} name = {product.name} price = {product.price}/>
+            <ProductCard key={index} id= {product.id} name = {product.name} price = {product.price}/>
         ))}
       </div>
     </div>
