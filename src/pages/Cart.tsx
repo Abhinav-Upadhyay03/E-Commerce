@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCart from "../component/ProductCart";
-
+import BannerCartPage from "../component/BannerCartPage";
 const Cart = () => {
   const [data, setdata] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -21,7 +21,8 @@ const Cart = () => {
 
   return (
     <>
-      <h1 className="text-4xl mt-12 ms-16">MY CART</h1>
+    <BannerCartPage/>
+      <h1 className="text-4xl mt-12 ml-16">MY CART</h1>
       <div className="parent flex">
         <div className="left">
           {data.map((value, index) => (

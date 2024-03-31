@@ -6,12 +6,14 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
 import ProductInfo from "./pages/ProductInfo";
+
 function App() {
   return (
     <>
      
       <Router>
         <Navbar />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />}>

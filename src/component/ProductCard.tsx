@@ -20,6 +20,8 @@ const ProductCard = ({ id, name, price }) => {
     setCounter(counter + 1);
     setProduct(updatedProduct);
     setLocalSto(updatedProduct);
+    showMessage(name + " added to Cart!")
+    // alert(name + " " + "Added to Cart!");
   };
 
   const handleInfoClick = () => {
@@ -60,11 +62,7 @@ const ProductCard = ({ id, name, price }) => {
         onClick={handleInfoClick}
       >
         <div className="imgDiv w-full h-full ">
-          <img
-            className="w-full h-full"
-            src="/images/wm.jpg"
-            alt=""
-          />
+          <img className="w-full h-full" src="/images/wm.jpg" alt="" />
         </div>
       </div>
       <div className="lowerDiv sm:w-11/12 w-11/12 m-auto">
@@ -87,6 +85,7 @@ const ProductCard = ({ id, name, price }) => {
           <h3 className="sm:text-lg text-xs">Add to cart</h3>
         </div>
       </div>
+     
     </div>
   );
 };
