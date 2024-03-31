@@ -20,7 +20,7 @@ const ProductCard = ({ id, name, price }) => {
     setCounter(counter + 1);
     setProduct(updatedProduct);
     setLocalSto(updatedProduct);
-    showMessage(name + " added to Cart!")
+    
     // alert(name + " " + "Added to Cart!");
   };
 
