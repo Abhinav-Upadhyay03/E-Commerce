@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCart from "../component/ProductCart";
-import BannerCartPage from "../component/BannerCartPage";
+
 const Cart = () => {
   const [data, setdata] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -10,7 +10,7 @@ const Cart = () => {
 
     let totalPrice = 0;
     products.forEach((value) => {
-      totalPrice += (Number)(value.price);
+      totalPrice += Number(value.price);
     });
     setTotalPrice(totalPrice);
   }, []);
@@ -21,7 +21,6 @@ const Cart = () => {
 
   return (
     <>
-    <BannerCartPage/>
       <h1 className="text-4xl mt-12 ml-16">MY CART</h1>
       <div className="parent flex">
         <div className="left">
